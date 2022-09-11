@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link href="http://fonts.cdnfonts.com/css/architects-draft" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Architects Daughter' rel='stylesheet'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="/css/editPage.css">
+    <title>Edit page</title>
+</head>
+<body>
+    <form action="/project/edit/<%= id%>" method="post" enctype="multipart/form-data" data-id="<%= id%>" id="myForm" autocomplete="off">
+
+        <div class="image_container">
+            
+            <span class="category_link">
+                <a href="/">Design </a>>
+                <a href="">Exterior </a>>
+                <a href="">Residential</a>
+            </span>
+
+            <!--  -->
+            <a href="/" class="arrow_back"><img src="/icons/arrow_back_FILL0_wght400_GRAD0_opsz48.svg" alt="arrow_back"></a><a href="/" class="b_homepage_link"> Back to Home Page</a>
+            <!--  -->
+
+            <div class="overlay">
+                <label for="choose_image_main"><img src="/icons/edit_FILL0_wght400_GRAD0_opsz48.svg" alt="edit"></label><input type="file" name="image" form="myForm" id="choose_image_main" value="/images/Uploads/<%=project.mainCategory%>/<%=project.subCategory %>/<%=project.subSubCategory%>/<%=project.path[0]%>">
+            </div>
+            <img alt="project image" class="image" src="/images/Uploads/<%=project.mainCategory%>/<%=project.subCategory %>/<%=project.subSubCategory%>/<%=project.path[0]%>">
+        
+            <button type="submit" id="save_button" class="a">
+                <img src="/icons/save_FILL0_wght400_GRAD0_opsz48.svg" alt="">
+            </button>
+            
+            <button type="submit" id="delete_button" data-id="<%= id%>">
+                <img src="/icons/delete_FILL0_wght400_GRAD0_opsz48.svg" alt="">
+            </button>
+        </div>
+        <div class="desc_container">
+
+            <!--  -->
+            <a href="/" class="arrow_back"><img src="/icons/arrow_back_FILL0_wght400_GRAD0_opsz48 white.svg" alt="arrow_back"></a><a href="/" class="b_homepage_link"> Back to Home Page</a>
+            <!--  -->
+            <ul class="description_list">
+                <li id="title"><h1><u>Project description</u></h1></li>
+                <li><label for="projectname">Project name: </label><input type="text" id="projectname" name="name" value = <%= project.name %> ></li>
+                <li><label for="projectarea">Project area: </label><input type="text" id="projectarea" name="area" value = <%= project.area %> ></li>
+                <li><label for="projectlocation">Project location: </label><input type="text" id="projectlocation" name="location" value = <%= project.location %> ></li>
+                <li><label for="projectcost">Project cost: </label><input type="text" id="projectcost" name="cost" value = <%= project.cost %> ></li>
+                <li>
+                    <label for="projectcategory">Project category: </label>
+
+                    <select id="projectcategory" data-main="<%= project.mainCategory %>" name="mainCategory">  
+                        <option value="design">Design</option> 
+                         <option value="build">Build</option>  
+                    </select> >  
+                    
+                    <select id="sub_category" data-sub="<%= project.subCategory %>" name="subCategory"> 
+                        <option value="exterior">Exterior</option> 
+                         <option value="interior">Interior</option>  
+                    </select> > 
+
+                    <select id="sub_sub_category" data-subsub="<%=project.subSubCategory%>" name="subSubCategory"> 
+                        <option value="residential">Residential</option> 
+                         <option value="commercial">Commercial</option> 
+                         <option value="office">Office</option>
+                         <option value="mixed">Mixed</option> 
+                    </select>
+                </li>
+            </ul>
+            <div class="more_images">
+               
+                <div class="image_box">
+                    <div class="overlay">
+                        <label for="choose_image_sub_1">
+                            <img src="/icons/edit_FILL0_wght400_GRAD0_opsz48.svg" alt="edit">
+                        </label>
+                        <input type="file" name="image" form="myForm" class="choose_image_sub" id="choose_image_sub_1">
+                        <button  class="delete_sub_image" data-id="<%= id%>">
+                            <img src="/icons/delete_forever_FILL0_wght400_GRAD0_opsz48.svg" alt="delete">
+                        </button>
+                    </div>
+                    <img alt="project images" src="<%= (project.path.length > 1)? '/images/Uploads/' + project.mainCategory + '/' + project.subCategory + '/' + project.subSubCategory + '/' + project.path[1] : '' %>">
+                </div>
+
+                <div class="image_box">
+                    <div class="overlay">
+                        <label for="choose_image_sub_2">
+                            <img src="/icons/edit_FILL0_wght400_GRAD0_opsz48.svg" alt="edit">
+                        </label>
+                        <input type="file" form="myForm" name="image" class="choose_image_sub" id="choose_image_sub_2">
+                        <button type="submit" class="delete_sub_image">
+                            <img src="/icons/delete_forever_FILL0_wght400_GRAD0_opsz48.svg" alt="delete">
+                        </button>
+                    </div>
+                    <img alt="project images" src="<%= (project.path.length > 2)? '/images/Uploads/' + project.mainCategory + '/' + project.subCategory + '/' + project.subSubCategory + '/' + project.path[2] : '' %>">
+                </div>
+
+
+                <div class="image_box">
+                    <div class="overlay">
+                        <label for="choose_image_sub_3">
+                            <img src="/icons/edit_FILL0_wght400_GRAD0_opsz48.svg" alt="edit">
+                        </label>
+                        <input type="file" name="image" form="myForm" class="choose_image_sub" id="choose_image_sub_3">
+                        <button type="submit" class="delete_sub_image">
+                            <img src="/icons/delete_forever_FILL0_wght400_GRAD0_opsz48.svg" alt="delete">
+                        </button>
+                    </div>
+                    <img alt="project images"  src="<%= (project.path.length > 3)? '/images/Uploads/' + project.mainCategory + '/' + project.subCategory + '/' + project.subSubCategory + '/' + project.path[3] : '' %>">
+                </div>
+                
+                <div class="image_box">
+                    <div class="overlay">
+                        <label for="choose_image_sub_4">
+                            <img src="/icons/edit_FILL0_wght400_GRAD0_opsz48.svg" alt="edit">
+                        </label>
+                        <input type="file" name="image" form="myForm" class="choose_image_sub" id="choose_image_sub_4">
+                        <button type="submit" class="delete_sub_image">
+                            <img src="/icons/delete_forever_FILL0_wght400_GRAD0_opsz48.svg" alt="delete">
+                        </button>
+                    </div>
+                    <img alt="project images" src="<%= (project.path.length > 4)? '/images/Uploads/' + project.mainCategory + '/' + project.subCategory + '/' + project.subSubCategory + '/' + project.path[4] : '' %>">
+                </div>
+            
+            </div>
+        </div>
+    </form>
+    <script src="/js/editPage.js"></script>
+</body>
+</html>

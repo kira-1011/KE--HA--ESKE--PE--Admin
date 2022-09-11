@@ -1,0 +1,153 @@
+* {
+    margin: 0;
+    padding: 0;
+    transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+html
+{
+    height: 100%;
+}
+
+/* make the body flex */
+body
+{
+    background-color: black;
+    color: white;
+    font-family: 'Architects Daughter';
+    font-weight:bold;
+    height: 100%;
+    display: flex;
+    flex-wrap:wrap;
+    /* overflow: hidden; */
+}
+
+/* make the image div responsive by specifying max width*/
+.image_container
+{
+    max-width: 60%;
+    height: 100%;
+    /* flex-shrink: 1; */
+}
+
+.image
+{
+    width: 100%;
+    height: 100%;
+}
+
+/* make the description container flex to layout the list and the other images*/
+.desc_container
+{
+    display: flex;
+    flex-direction: column;
+    /* background-color: red; */
+    width: 40%;
+}
+
+.description_list
+{
+    list-style: none;
+    width: 100%;
+    margin: 0em;
+    /* background-color: aqua; */
+}
+
+/* make list more readable */
+.desc_container ul li
+{
+    font-size: x-large;
+    margin-top: 1em;
+    margin-left: 1em;
+}
+
+.more_images
+{
+    display: flex; 
+    flex-wrap: wrap;  
+    gap: 1em;
+    /* background-color: white; */
+    margin-top: 1.5em;
+    padding: 1em;
+}
+
+.more_images .image_box
+{
+    width: 48.9%;
+    height: 16.875em;
+    flex: 1 1 calc(40%);
+}
+
+.more_images .image_box img
+{
+    width: 100%;
+    height: 100%;
+}
+
+
+/* for smaller devices (mobile tablets) decrease the font and make the image fill the whole width */
+
+/* when the width becomes smaller (1200px) make the font small */
+@media screen and (max-width: 1630px) and (min-width: 1287px)
+{
+    .desc_container ul li
+    {
+        font-size: large;
+    }
+
+    /* .more_images img
+    {
+        width: 48.5%;
+    } */
+}
+
+@media screen and (max-width: 1286px) and (min-width: 1025px)
+{
+    .desc_container ul li
+    {
+        font-size: small;
+    }
+
+    /* .more_images img
+    {
+        width: 48.9%;
+    } */
+}
+
+@media screen and (max-width: 1024px)
+{
+    .image_container
+    {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    .desc_container ul li
+    {
+        font-size: small;
+    }
+
+    .description_list #title
+    {
+        margin-top: 0.5em;
+    }
+
+    .desc_container
+    {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 414px)
+{
+    .desc_container ul li
+    {
+        font-size: xx-small;
+    }
+
+    .more_images .image_box
+    {
+        height: 8em;
+    }
+}

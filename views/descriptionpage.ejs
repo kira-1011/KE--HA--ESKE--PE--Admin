@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link href="http://fonts.cdnfonts.com/css/architects-draft" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Architects Daughter' rel='stylesheet'>
+    <link rel="stylesheet" href="/css/descriptionpage.css">
+    <title>Description page</title>
+</head>
+<body>
+    <div class="image_container"><img alt="project image" class="image" src="/images/Uploads/<%=project.mainCategory%>/<%=project.subCategory %>/<%=project.subSubCategory%>/<%=project.path[0]%>"></div>
+    <div class="desc_container">
+        <ul class="description_list">
+            <li id="title"><h1><u>Project description</u></h1></li>
+            <li>Project name: <%= project.name %></li>
+            <li>Project area: <%= project.area %></li>
+            <li>Project location: <%=project.location %></li>
+            <li>Project cost: <%=project.cost %></li>
+        </ul>
+        
+
+        <% if(project.path.length == 2) { %>
+            <div class="more_images">
+                <div class="image_box"><img alt="project images" src="/images/Uploads/<%=project.mainCategory%>/<%=project.subCategory %>/<%=project.subSubCategory%>/<%=project.path[1]%>"></div>
+            </div>
+        <% } else if(project.path.length > 2) { %>
+            <div class="more_images">
+                <% for( let i = 1, n =  project.path.length; i < n; i++ ) { %>
+                    <div class="image_box"><img alt="project images" src="/images/Uploads/<%=project.mainCategory%>/<%=project.subCategory %>/<%=project.subSubCategory%>/<%=project.path[i]%>"></div>
+                <% } %>
+            </div>
+        <% } %>
+        </div>
+    </div>
+
+    
+</body>
+</html>

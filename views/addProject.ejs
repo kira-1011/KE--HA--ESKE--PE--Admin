@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link href="http://fonts.cdnfonts.com/css/architects-draft" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Architects Daughter' rel='stylesheet'>
+    <link rel="stylesheet" href="/css/addProject.css">
+    <title>KE HA ESKE PE | Add Project</title>
+</head>
+<body>
+   
+    <div class="container">
+
+        <div class="formContainer">
+            <fieldset style="border: thin solid #BBB; border-radius: 0.2em;">
+                <legend>ከ <span style="font-size:2em">ሀ -</span><span style="font-size:2em"> ፐ</span></legend>
+                <form action="/project/add" id="myForm" class="form" method="post" enctype="multipart/form-data">
+                    <div class="fieldContainer">
+                        <label for="mainCategory"> Main Category:  </label>
+                       
+                        <select name="mainCategory" id="mainCategory" required>
+                            <option>Design</option>
+                            <option>Build</option>
+                        </select>
+                        <label for="subCategory"> Sub Category:  </label>
+
+                        <select name="subCategory" id="subCategory">
+                            <option>Exterior</option>
+                            <option>Interior</option>
+                        </select>
+                        <label for="subSubCategory"> Sub Sub Category:  </label>
+                        <!-- <input type="text" name="subSubCategory" id="subSubCategory"> -->
+                        <select name="subSubCategory" id="subSubCategory">
+                            <option>Residential</option>
+                            <option>Commercial</option>
+                            <option>Office</option>
+                            <option>Mixed</option>
+                        </select>
+                        <label for="name"> Name:  </label>
+                        <input type="text" name="name" id="name" required>
+                        <label for="area"> Area:  </label>
+                        <input type="text" name="area" id="area" required>
+                        <label for="location"> Location:  </label>
+                        <input type="text" name="location" id="location" required>
+                        <label for="cost"> Cost:  </label>
+                        <input type="text" name="cost" id="cost" required>
+                        <input type="submit" value="Save" id="save">
+                    </div>
+                    
+                </form>
+            </fieldset>
+        </div>
+
+        <div class="mainImageContainer" id="mainImgContainer">
+
+            <div class="overlay">
+                <label for="mainImage">
+                    <img src="/icons/edit_FILL0_wght400_GRAD0_opsz48.svg" alt="Edit" class="edit">
+                </label>
+                <img src="/icons/delete_forever_FILL0_wght400_GRAD0_opsz48.svg" alt="Delete" class="delete">
+                <input type="file" form="myForm" name="image" id="mainImage" accept="image/*" required>
+            </div>
+            <span class="imagePreview"> Image Preview</span>
+            <img src="" alt="image preview" id="mainImg">
+            
+        </div>
+
+        <div class="altImagesContainer">
+
+            <div class="imagesContainer">
+                    
+                <div class="overlay">
+                    <label for="altImage1">
+                        <img src="/icons/edit_FILL0_wght400_GRAD0_opsz48.svg" alt="Edit" class="edit">
+                    </label>
+                    <img src="/icons/delete_forever_FILL0_wght400_GRAD0_opsz48.svg" alt="Delete" class="delete">
+                    <input type="file" form="myForm" name="image" id="altImage1" accept="image/*">
+                </div>
+                <span class="imagePreview">Image Preview</span>
+                <img src="" alt="image preview" id="altImg1">
+            </div>
+    
+            <div class="imagesContainer">
+                
+                <div class="overlay">
+                    <label for="altImage2">
+                        <img src="/icons/edit_FILL0_wght400_GRAD0_opsz48.svg" alt="Edit" class="edit">
+                    </label>
+                    <img src="/icons/delete_forever_FILL0_wght400_GRAD0_opsz48.svg" alt="Delete" class="delete">
+                    <input type="file" form="myForm" name="image" id="altImage2" accept="image/*">
+                </div>
+                <span class="imagePreview">Image Preview</span>
+                <img src="" alt="image preview" id="altImg2">
+            </div>
+    
+            <div class="imagesContainer">
+                        
+                <div class="overlay">
+                    <label for="altImage3">
+                        <img src="/icons/edit_FILL0_wght400_GRAD0_opsz48.svg" alt="Edit" class="edit">
+                    </label>
+                    <img src="/icons/delete_forever_FILL0_wght400_GRAD0_opsz48.svg" alt="Delete" class="delete">
+                    <input type="file" form="myForm" name="image" id="altImage3" accept="image/*">
+                </div>
+                <span class="imagePreview">Image Preview</span>
+                <img src="" alt="image preview" id="altImg3">
+            </div>
+    
+            <div class="imagesContainer">
+                
+                <div class="overlay">
+                    <label for="altImage4">
+                        <img src="/icons/edit_FILL0_wght400_GRAD0_opsz48.svg" alt="Edit" class="edit">
+                    </label>
+                    <img src="/icons/delete_forever_FILL0_wght400_GRAD0_opsz48.svg" alt="Delete" class="delete">
+                    <input type="file" form="myForm" name="image" id="altImage4" accept="image/*">
+                </div>
+                <span class="imagePreview">Image Preview</span>
+                <img src="" alt="image preview" id="altImg4">
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="/js/addProject.js"></script>
+
+</body>
+</html>

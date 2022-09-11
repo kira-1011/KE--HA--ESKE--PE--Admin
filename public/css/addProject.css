@@ -1,0 +1,194 @@
+html,body{
+    height: 100%;
+    width: 100%;
+}
+
+body{
+    font-family: 'Architects Daughter';
+    font-weight: bold;
+    background-color: black;
+    color: white;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+.container{
+
+    display: flex;
+    justify-content: flex-start;
+    margin: 0;
+    padding: 0;
+    height: 96%;
+    width: 100%;
+    
+}
+
+.formContainer{
+    margin-left: 0.5em;
+    width: 15%;
+}
+
+fieldset{
+    height: 100%;
+    margin: 0;
+}
+
+.form{
+    display: flex;
+    flex-direction: row;
+    gap: 5em;
+    padding: 0.5em;
+
+}
+
+.form input{
+    border: none;
+    padding: 0.5em;
+    border-radius: 0.2em;
+    box-shadow: 0 0em 0.5em #333;
+    width: 100%;
+    margin: 0 0 0 0;
+}
+
+.form select{
+    border: none;
+    padding: 0.5em;
+    border-radius: 0.2em;
+    box-shadow: 0 0em 0.5em #333;
+    width: 100%;
+}
+
+.form option{
+    margin-top: 2em;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.form input:focus{
+    box-shadow: 0 0em 0.8em #777;
+    outline: none;
+}
+
+.fieldContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.fileContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    margin-right: 0.5em;
+}
+
+#save{
+    transition: 0.5s;
+    color: white;
+    border: thin solid white;
+    margin-top: 1.5em;
+    padding: 0.5em;
+    background-color:black;
+}
+
+#save:hover{
+    background-color: white;
+    color: black;
+}
+
+.mainImageContainer{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    border: thin solid #777;
+    margin: 1.3em 0.5em 0 0.5em;
+    border-radius: 0.2em;
+}
+
+#mainImg, #altImg1, #altImg2, #altImg3, #altImg4{
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+
+.mainImageContainer span, .imagesContainer span{
+    display: inline;
+}
+
+.altImagesContainer{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 25%;
+    height: 100%;
+    margin: 1.3em 0.5em 0 0;
+    gap: 0.5em;
+}
+.imagesContainer{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 13.7em;
+    border: thin solid #777;
+    border-radius: 0.2em;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.overlay{
+    display: none;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(100, 100, 100, 0.9);
+    z-index: 0;
+    color: black;
+}
+
+#mainImage, #altImage1, #altImage2, #altImage3, #altImage4{
+    display: none;
+    visibility: hidden;
+}
+
+.mainImageContainer:hover .overlay, .imagesContainer:hover .overlay{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+}
+
+.imagesContainer label{
+    height: 20%;
+    width: 20%;
+}
+
+.mainImageContainer:hover label:hover .edit:hover, .imagesContainer:hover label:hover .edit:hover{
+    z-index: 1;
+    cursor: pointer;
+    background-color: white;
+    border-radius: 0.2em;
+}
+
+.delete:hover{
+    z-index: 1;
+    cursor: pointer;
+    background-color: white;
+    border-radius: 0.2em;
+}
+
+/* .altImagesContainer .delete{
+    height: 20%;
+    width: 13%;
+}
+
+.altImagesContainer .edit{
+    height: 100%;
+    width: 70%;
+} */

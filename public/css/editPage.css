@@ -1,0 +1,364 @@
+* {
+    margin: 0;
+    padding: 0;
+    /* transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1); */
+}
+
+html
+{
+    height: 100%;
+    width: 100%;
+}
+
+/* make the body flex */
+body
+{
+    background-color: black;
+    color: white;
+    font-family: 'Architects Daughter';
+    font-weight:bold;
+    height: 100%;
+    position: relative;
+    /* display: flex;
+    flex-wrap:wrap; */
+    /* overflow: hidden; */
+    
+}
+
+form
+{
+    /* background-color: aqua; */
+    position: relative;
+    display: flex;
+    flex-wrap:wrap;
+    width: 100%;
+    height: 100%;
+}
+
+/* make the image div responsive by specifying max width*/
+.image_container
+{
+    position: relative;
+    max-width: 60%;
+    height: 100%;
+}
+
+/* position category link */
+.image_container .category_link
+{
+    color: black;
+    position: absolute;
+    top: 5px;
+    left: 16px;
+    z-index: 1;
+}
+
+.image_container .b_homepage_link
+{
+    display: none;
+    position: absolute;
+    top: 5px;
+    right: 16px;
+    z-index: 1;
+    /* background-color: red; */
+}
+
+.arrow_back
+{
+    position: absolute;
+    top: 4px;
+    right: 144px;
+    z-index: 1;
+}
+
+.image_container .arrow_back
+{ 
+    display: none;
+}
+
+.arrow_back img
+{
+    width: 50%;
+    height: auto;
+    /* background-color: blue; */
+}
+
+.image_container a
+{
+    color: black;
+    /* font-size: 1.5em; */
+    text-decoration: none;
+}
+
+/* position save and delete buttons at the bottom of the image */
+#save_button{
+    position: absolute;
+    left: 16px;
+    bottom: 10px;    
+    z-index: 1;
+    background-color: transparent;
+    border: 0;
+}
+
+#delete_button
+{
+    position: absolute;
+    right: 16px;
+    bottom: 10px;
+    z-index: 1;
+    background-color: transparent;
+    border: 0;
+}
+
+.image
+{
+    width: 100%;
+    height: 100%;
+}
+
+/* grey color overlay on the image*/
+.overlay
+{
+    display: none;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(159, 159, 159, 0.8);
+    z-index: 0;
+}
+
+/* hide choose file button to only show the icon button*/
+.overlay #choose_image_main, .choose_image_sub
+{
+    display: none;
+    visibility: hidden;
+}
+
+/* make the description container flex to layout the list and the other images*/
+.desc_container
+{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    /* background-color: red; */
+}
+
+.desc_container .b_homepage_link
+{
+    position: absolute;
+    top: 5px;
+    right: 16px;
+    /* background-color: red; */
+    z-index: 1;
+}
+
+.desc_container a
+{
+    color: white;
+    /* font-size: 1.5em; */
+    text-decoration: none;
+}
+
+.description_list
+{
+    list-style: none;
+    width: 100%;
+    margin: 0em;
+    /* background-color: aqua */
+}
+
+/* make list more readable */
+.desc_container ul li
+{
+    font-size: x-large;
+    margin-top: 1em;
+    margin-left: 1em;
+}
+
+.description_list #title
+{
+    margin-top: 0em;
+}
+
+input[type="text"], select
+{
+    padding: 0.4em;
+}
+
+.more_images
+{
+    display: flex; 
+    flex-wrap: wrap;  
+    justify-content: center;
+    gap: 1em;
+    /* background-color: white; */
+    margin-top: 0em;
+    padding: 1em;
+    /* height: 40%; */
+}
+
+.more_images .image_box
+{
+    position: relative;
+    max-width: 48.9%;
+    height: 16.875em;
+    /* height: 15em; */
+    
+    /* >=7 */
+    /* flex: 1 1 calc(23%); */
+    
+    /* 6 */
+    /* flex: 1 1 calc(30%); */
+    
+    /* <= 4 */
+    flex: 1 1 calc(40%);
+}
+
+
+.more_images .image_box img
+{
+    width: 100%;
+    height: 100%;
+}
+
+/* edit delete button in the sub images */
+.delete_sub_image
+{
+    background-color: transparent;
+    border: 0;
+}
+
+/* hover setting*/
+@media (hover: hover)
+{
+    #save_button:hover, #delete_button:hover
+    {
+        background-color: black;
+        border-radius: 1em;
+        cursor: pointer;
+    }
+}
+
+.image_container:hover .overlay, .image_box:hover .overlay
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+}
+
+.image_container:hover label:hover, .more_images label:hover, .more_images .delete_sub_image:hover
+{
+    cursor: pointer;
+    background-color: white;
+    border-radius: 1em;
+}
+
+/* for smaller devices (mobile tablets) decrease the font and make the image fill the whole width */
+
+/* when the width becomes smaller (1200px) make the font small */
+@media screen and (max-width: 1630px) and (min-width: 1287px)
+{
+    .desc_container ul li
+    {
+        font-size: large;
+    }
+}
+
+@media screen and (max-width: 1286px) and (min-width: 1025px)
+{
+    .desc_container ul li
+    {
+        font-size: small;
+    }
+}
+
+@media screen and (max-width: 1024px)
+{
+    
+    .image_container
+    {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    .image_container .b_homepage_link, .image_container .arrow_back
+    {
+        display: inline;
+    }
+
+    .desc_container ul li
+    {
+        margin-top: 2em;
+    }
+    
+    .desc_container ul li
+    {
+        font-size: medium;
+    }
+
+    .description_list #title
+    {
+        margin-top: 0.5em;
+    }
+
+    .desc_container
+    {
+        width: 100%;
+        height: auto;
+    }
+
+    .desc_container .b_homepage_link, .desc_container .arrow_back
+    {
+        display: none;
+    }
+
+    #delete_button
+    {
+        right: 16px;
+    }
+}
+
+@media screen and (max-width: 600px)
+{
+    .category_link, .b_homepage_link
+    {
+        font-size: smaller;
+    }
+
+    .arrow_back
+    {
+        right: 115px;
+    }
+
+    .arrow_back img
+    {
+        width: 40%;
+    }
+}
+
+@media screen and (max-width: 414px)
+{
+    .desc_container ul li, .category_link, .b_homepage_link
+    {
+        font-size: xx-small;
+    }
+
+    .more_images .image_box
+    {
+        height: 8em;
+    }
+
+    .arrow_back
+    {
+        top: 2px;
+        right: 70px;
+    }
+
+    .arrow_back img
+    {
+        width: 30%;
+    }
+}
