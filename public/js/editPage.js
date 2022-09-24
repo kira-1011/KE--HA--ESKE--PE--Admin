@@ -62,3 +62,19 @@ del.addEventListener("click", () => {
     });
 });
 
+
+//make the link's "back to previous page" href = previous page
+let b_homepage = document.querySelectorAll(".b_homepage_link");
+let back_arrow = document.querySelectorAll(".arrow_back");
+
+document.querySelectorAll('.b_homepage_link').forEach(item => {
+    item.addEventListener('click', event => {
+        item.setAttribute('href', document.referrer);
+    })
+  })
+
+  document.querySelectorAll('.arrow_back').forEach(item => {
+    item.addEventListener('click', event => {
+        item.setAttribute('href', document.referrer);
+    })
+  })

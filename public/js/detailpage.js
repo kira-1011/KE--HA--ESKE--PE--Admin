@@ -4,6 +4,8 @@
 
 //check the image size and if its height is 1280 increase the height of the container 
 
+//make the link's "back to previous page" href = previous page
+
 for( let i=0; i<document.getElementsByClassName("ulcontainer").length; i++)
 {
     let wrapper = document.getElementsByClassName("wrapper")[i];
@@ -38,3 +40,7 @@ for( let i=0; i<document.getElementsByClassName("ulcontainer").length; i++)
   // };
 }
 
+let b_homepage = document.querySelector("#b_homepage a");
+b_homepage.addEventListener('click', ()=>{
+  b_homepage.setAttribute("href", document.referrer);
+});

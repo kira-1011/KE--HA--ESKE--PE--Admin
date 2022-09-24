@@ -46,8 +46,15 @@
             </div>
 
         <% } else { %>
+            <%projects.sort((a,b) => (a.subSubCategory > b.subSubCategory) ? 1 : ((b.subSubCategory > a.subSubCategory) ? -1 : 0))%>
+            <% temp = "" %>
             <div id="image_container" class="noSelect"> 
                 <% for( let i = 0; i < projects.length; i++) { %>
+                    <%  if(url.indexOf("all") != -1) { %>
+                        <%  if (temp != projects[i].subSubCategory){ %>
+                            <div class="separator"><%=projects[i].subSubCategory%></div>
+                        <% temp = projects[i].subSubCategory } %>    
+                    <% } %> 
                     <div class="wrapper">
                         <div class="image_div" style="background-image: url('https://infinite-ocean-03345.herokuapp.com/images/Uploads/<%=projects[i].mainCategory%>/<%=projects[i].subCategory%>/<%=projects[i].subSubCategory %>/<%=projects[i].path[0]%>');" data-id="<%= projects[i].id %>"></div>
                         <div class="ulcontainer">
