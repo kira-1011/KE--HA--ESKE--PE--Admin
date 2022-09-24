@@ -8,6 +8,8 @@ const multer = require("multer");
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
 
+        console.log(req.body)
+
         let path = req.body.mainCategory.toLowerCase();
 
         if(path != "build")
@@ -129,7 +131,7 @@ app.post("/project/add", upload.array('image') ,(req, res) => {
 
         let subRoutes = (project.mainCategory != "build")?  "/" + project.subCategory.toLowerCase() + "/" + project.subSubCategory.toLowerCase() : "";
 
-        res.redirect("/" + req.body.mainCategory.toLowerCase() + subRoutes);
+        res.json("/" + req.body.mainCategory.toLowerCase() + subRoutes);
     })
     .catch(err => res.redirect("/project/addProject"));
     
