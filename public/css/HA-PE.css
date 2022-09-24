@@ -5,6 +5,20 @@ html,body{
     margin: 0;
 }
 
+/* Disable blue highlighting on mobile screens when tapped */
+.noSelect {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.noSelect:focus {
+    outline: none !important;
+}
+
 a{
     color: white;
     text-decoration: none;
@@ -95,7 +109,7 @@ body{
         height: 0em;
     }
     80%{
-        height: 3.8em;
+        height: 4.3em;
     }
     100%{
         height: fit-content;
@@ -104,7 +118,7 @@ body{
 
 @keyframes designListHide1 {
     0%{
-        height: 3.8em;
+        height: 4.3em;
     }
     
     100%{
@@ -124,14 +138,13 @@ body{
 
 @keyframes designListHide3 {
     0%{
-        height: 19.8em;
+        height: 19.4em;
     }
     
     100%{
         height: 0em;
     }
 }
-
 .navContainer{
     display: flex;
     justify-content:flex-end;
@@ -193,11 +206,15 @@ body{
     text-decoration: underline;
 }
 
-#exterior{
-    margin: 0 0 0 1em;
+#exterior, #interior{
+    letter-spacing: 0.2em;
+    text-decoration: none;
+    font-size: 1.05em;
+    display: block;
+    margin-left: 0.5em;
 }
 #interior{
-    margin: 0 0 0 1em;
+    margin-left: 0.9em;
 }
 
 .subList{
@@ -220,11 +237,10 @@ body{
     letter-spacing: 0.1em;
 }
 
-#exteriorSubList{
-    font-size: medium;
-}
-#interiorSubList{
-    font-size: medium;
+#exteriorSubList, #interiorSubList{
+    font-size: 0.85em;
+    letter-spacing: 0.1em;
+    margin-left: 1em;
 }
 
 #designSubList{
@@ -232,15 +248,20 @@ body{
 }
 
 #contactSubList img{
-    height: 2em;
-    width: 2em;
+    height: 1.85em;
+    width: 1.85em;
 }
 
-#interiorSubList  li:hover{
-    text-decoration: underline;
+.leftContactIcons{
+    margin-right: 1em;
 }
 
-#exteriorSubList  li:hover{
+#phone{
+    height: 1.2em; 
+    width: 1.2em;
+}
+
+#interiorSubList  li:hover, #exteriorSubList  li:hover{
     text-decoration: underline;
 }
 
@@ -322,7 +343,6 @@ body{
     }
 
     .horNavBar{
-        /* background-color: red; */
         display: flex;
         align-items: flex-end;
         flex-direction: column;
@@ -330,7 +350,8 @@ body{
         height: fit-content;
         margin: 0.5em 0.5em 0 0;
         padding: 0;
-        font-size: x-small;
+        font-size: small;
+        z-index: 99;
     }
 
     .subList{
@@ -343,25 +364,35 @@ body{
         padding: 0;
         margin: 0;
         list-style: none;
-        font-size: x-small;
+        font-size: small;
     }
 
-    #exterior{
-        margin: 0 0 0 1.8em;
+    #exterior, #interior{
+        letter-spacing: 0.25em;
+        text-decoration: none;
+        font-size: small;
+        margin-left: 2em;
+        font-weight: 600;
     }
+
     #interior{
-        margin: 0 0 0 1.9em;
+        margin-top: 0.2em;
+        margin-left: 2.5em;
     }
-
-    #exteriorSubList{
+    
+    #exteriorSubList, #interiorSubList{
         font-size: x-small;
-    }
-    #interiorSubList{
-        font-size: x-small;
+        margin-left: 3.5em;
     }
     
     #designSubList{
-        font-size: x-small;
+        font-size: small;
+    }
+
+    .subList > li{
+        opacity: 0;
+        visibility: hidden;
+        margin: 0.6em 0 0 0;
     }
 
     .lang{
@@ -372,6 +403,15 @@ body{
         font-size: x-small;
     }
 
+    #contactSubList img{
+        height: 1.4em;
+        width: 1.4em;
+    }
+
+    #phone{
+        height: 0.9em; 
+        width: 0.9em;
+    }
 }
 
  @media screen and (min-width: 641px) and (max-width: 1007px) {
@@ -404,6 +444,7 @@ body{
         margin: 0.5em 0.5em 0 0;
         padding: 0;
         font-size: medium;
+        z-index: 99;
     }
     .subList{
         display: none;
@@ -418,22 +459,32 @@ body{
         font-size: medium;
     }
 
-    #exterior{
-        margin: 0 0 0 3em;
-    }
-    #interior{
-        margin: 0 0 0 3em;
+    #exterior, #interior{
+        text-decoration: none;
+        font-size: medium;
+        margin-left: 3em;
+        font-weight: 600;
     }
 
-    #exteriorSubList{
-        font-size: medium;
+    #interior{
+        margin-top: 0.4em;
+        margin-left: 3.2em;
     }
-    #interiorSubList{
-        font-size: medium;
+    
+
+    #exteriorSubList, #interiorSubList{
+        font-size: small;
+        margin-left: 3.8em;
     }
     
     #designSubList{
         font-size: medium;
+    }
+
+    .subList > li{
+        opacity: 0;
+        visibility: hidden;
+        margin: 0.5em 0 0 0;
     }
 
     .lang{
@@ -442,6 +493,16 @@ body{
         justify-content: center;
         top: 70%;
         font-size: medium;
+    }
+
+    #contactSubList img{
+        height: 1.5em;
+        width: 1.5em;
+    }
+
+    #phone{
+        height: 1em; 
+        width: 1em;
     }
 
 }

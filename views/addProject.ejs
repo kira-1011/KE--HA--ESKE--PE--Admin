@@ -11,6 +11,13 @@
     <link href="http://fonts.cdnfonts.com/css/architects-draft" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Architects Daughter' rel='stylesheet'>
     <link rel="stylesheet" href="/css/addProject.css">
+    <script type="importmap">
+        {
+        "imports": {
+         "compressorjs": "https://cdnjs.cloudflare.com/ajax/libs/compressorjs/1.1.1/compressor.js"
+        }
+       }
+      </script>
     <title>KE HA ESKE PE | Add Project</title>
 </head>
 <body>
@@ -20,7 +27,7 @@
         <div class="formContainer">
             <fieldset style="border: thin solid #BBB; border-radius: 0.2em;">
                 <legend>ከ <span style="font-size:2em">ሀ -</span><span style="font-size:2em"> ፐ</span></legend>
-                <form action="/project/add" id="myForm" class="form" method="post" enctype="multipart/form-data">
+                <form action="/project/add" id="myForm" name="myForm" class="form" method="post" enctype="multipart/form-data">
                     <div class="fieldContainer">
                         <label for="mainCategory"> Main Category:  </label>
                        
@@ -64,7 +71,8 @@
                     <img src="/icons/edit_FILL0_wght400_GRAD0_opsz48.svg" alt="Edit" class="edit">
                 </label>
                 <img src="/icons/delete_forever_FILL0_wght400_GRAD0_opsz48.svg" alt="Delete" class="delete">
-                <input type="file" form="myForm" name="image" id="mainImage" accept="image/*" required>
+                <!-- <input type="file" form="myForm" name="image" id="mainImage" accept="image/*" required> -->
+                <input type="file" form="myForm" id="mainImage" accept="image/*" required>
             </div>
             <span class="imagePreview"> Image Preview</span>
             <img src="" alt="image preview" id="mainImg">
@@ -80,7 +88,8 @@
                         <img src="/icons/edit_FILL0_wght400_GRAD0_opsz48.svg" alt="Edit" class="edit">
                     </label>
                     <img src="/icons/delete_forever_FILL0_wght400_GRAD0_opsz48.svg" alt="Delete" class="delete">
-                    <input type="file" form="myForm" name="image" id="altImage1" accept="image/*">
+                    <!-- <input type="file" form="myForm" name="image" id="altImage1" accept="image/*"> -->
+                    <input type="file" form="myForm" id="altImage1" accept="image/*">
                 </div>
                 <span class="imagePreview">Image Preview</span>
                 <img src="" alt="image preview" id="altImg1">
@@ -93,7 +102,8 @@
                         <img src="/icons/edit_FILL0_wght400_GRAD0_opsz48.svg" alt="Edit" class="edit">
                     </label>
                     <img src="/icons/delete_forever_FILL0_wght400_GRAD0_opsz48.svg" alt="Delete" class="delete">
-                    <input type="file" form="myForm" name="image" id="altImage2" accept="image/*">
+                    <!-- <input type="file" form="myForm" name="image" id="altImage2" accept="image/*"> -->
+                    <input type="file" form="myForm" id="altImage2" accept="image/*">
                 </div>
                 <span class="imagePreview">Image Preview</span>
                 <img src="" alt="image preview" id="altImg2">
@@ -106,7 +116,8 @@
                         <img src="/icons/edit_FILL0_wght400_GRAD0_opsz48.svg" alt="Edit" class="edit">
                     </label>
                     <img src="/icons/delete_forever_FILL0_wght400_GRAD0_opsz48.svg" alt="Delete" class="delete">
-                    <input type="file" form="myForm" name="image" id="altImage3" accept="image/*">
+                    <!-- <input type="file" form="myForm" name="image" id="altImage3" accept="image/*"> -->
+                    <input type="file" form="myForm" id="altImage3" accept="image/*">
                 </div>
                 <span class="imagePreview">Image Preview</span>
                 <img src="" alt="image preview" id="altImg3">
@@ -119,17 +130,16 @@
                         <img src="/icons/edit_FILL0_wght400_GRAD0_opsz48.svg" alt="Edit" class="edit">
                     </label>
                     <img src="/icons/delete_forever_FILL0_wght400_GRAD0_opsz48.svg" alt="Delete" class="delete">
-                    <input type="file" form="myForm" name="image" id="altImage4" accept="image/*">
+                    <!-- <input type="file" form="myForm" name="image" id="altImage4" accept="image/*"> -->
+                    <input type="file" form="myForm" id="altImage4" accept="image/*">
                 </div>
                 <span class="imagePreview">Image Preview</span>
                 <img src="" alt="image preview" id="altImg4">
             </div>
-
         </div>
-
     </div>
 
-    <script src="/js/addProject.js"></script>
+    <script type="module" src="/js/addProject.js" ></script>
 
 </body>
 </html>

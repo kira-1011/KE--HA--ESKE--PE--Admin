@@ -13,24 +13,27 @@
     <link rel="stylesheet" href="/css/detailpage.css">
     <title>KE HA ESKE PE</title>
 </head>
-<body>
+<body>    
     <!-- top bar -->
-    <div id="topbar">
+    <div id="topbar" class="noSelect">
         <span id="pagetitle"> 
-            <a href="/" style=" display: inline;"><%= data.mainCategory %></a> 
-            
-            <% if(data.subCategory != "" && data.subSubCategory != "") { %>
-                ><a href="/" style=" display: inline;"><%= data.subCategory %></a>
-                ><a href="" style=" display: inline;"><%= data.subSubCategory %></a>
-           <% } %>
+            <% if(data.mainCategory == "build") { %>
+                <a href = "/" style=" display: inline; text-transform: capitalize;">Built ups</a>
+            <% } else { %>
+                <a href="/" style=" display: inline; text-transform: capitalize;"><%= data.mainCategory%> </a> > 
+                <a href="/<%=data.mainCategory %>/<%=data.subCategory%>/<%=data.subSubCategory%>" style=" display: inline; text-transform: capitalize;"><%= data.subCategory %> </a>
+                <% if( data.subSubCategory != undefined) {%>
+                    ><a href="" style=" display: inline; text-transform: capitalize;"><%= data.subSubCategory%></a>
+                <% } %>
+            <% } %>
         </span>
-        <div id="logo_container"><a href="/"><span id="logo"><span id="ke">ከ</span> ሀ - ፐ</span></a></div>
-        <div id="b_homepage"><a href="/"><span class="material-symbols-outlined">arrow_back</span>  Back to Home Page</a></div>
+        <div id="logo_container"><a href="/"><span id="logo" class="notranslate"><span id="ke" class="notranslate">ከ</span> ሀ - ፐ</span></a></div>
+        <div id="b_homepage"><a href=""><span class="material-symbols-outlined notranslate">arrow_back</span>  Back to previous Page</a></div>
     </div>
         <% if (projects.length == 1){ %>
-            <div id="image_container"> 
+            <div id="image_container" class="noSelect"> 
                 <div class="wrapper">
-                    <div class="image_div" style="background-image: url('/images/Uploads/<%=projects[0].mainCategory%>/<%=projects[0].subCategory%>/<%=projects[0].subSubCategory%>/<%=projects[0].path[0]%>');" data-id="<%= projects[0].id %>"></div>
+                    <div class="image_div" style="background-image: url('https://infinite-ocean-03345.herokuapp.com/images/Uploads/<%=projects[0].mainCategory%>/<%=projects[0].subCategory%>/<%=projects[0].subSubCategory%>/<%=projects[0].path[0]%>');" data-id="<%= projects[0].id %>"></div>
                     <div class="ulcontainer">
                         <ul class="description_list">
                             <li>Project name: <%= projects[0].name %> </li>
@@ -43,12 +46,10 @@
             </div>
 
         <% } else { %>
-
-            <div id="image_container"> 
-                <% for( let i = 0; i < projects.length; i++ ) { %>
-                
+            <div id="image_container" class="noSelect"> 
+                <% for( let i = 0; i < projects.length; i++) { %>
                     <div class="wrapper">
-                        <div class="image_div" style="background-image: url('/images/Uploads/<%=projects[i].mainCategory%>/<%=projects[i].subCategory%>/<%=projects[i].subSubCategory %>/<%=projects[i].path[0]%>');" data-id="<%= projects[i].id %>"></div>
+                        <div class="image_div" style="background-image: url('https://infinite-ocean-03345.herokuapp.com/images/Uploads/<%=projects[i].mainCategory%>/<%=projects[i].subCategory%>/<%=projects[i].subSubCategory %>/<%=projects[i].path[0]%>');" data-id="<%= projects[i].id %>"></div>
                         <div class="ulcontainer">
                             <ul class="description_list">
                                 <li>Project name: <%= projects[i].name %> </li>
@@ -67,9 +68,7 @@
             <img src="/icons/add-button-12016.svg" alt="add">
         </button>
     </a>
-    
 
-    
     <!-- js script code-->
     <script src="/js/detailpage.js"></script>
 </body>
