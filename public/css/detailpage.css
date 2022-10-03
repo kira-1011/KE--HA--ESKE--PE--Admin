@@ -163,12 +163,19 @@ a
     text-align: center;
 }
 
-/* .btnContainer{
-    display: flex;
-    justify-content: flex-end;
-    flex-direction: row;
-    background-color: aqua;
-} */
+.delete{
+    opacity: 0;
+    visibility: hidden;
+    height: 3em;
+    width: 3em;
+    transition: 0.35s;
+}
+
+
+.delete:hover{
+    background-color: #555;
+    border-radius: 0.2em;
+}
 
 #add{
     position: fixed;

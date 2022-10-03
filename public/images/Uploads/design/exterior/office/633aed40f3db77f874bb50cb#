@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KE HA ESKE PE</title>
+    <link href="/css/HA-PE.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Architects Daughter' rel='stylesheet'>
+    <link href="https://fonts.cdnfonts.com/css/architects-draft" rel="stylesheet">
+</head>
+<body>
+
+    <div id="main">
+
+        <div class="navContainer">
+            
+            <div id="nav" class="horNavBar noSelect">
+                <img id="burgerMenu" src="/icons/menu-icon.svg" alt="menu">
+        
+                <div id="mnu" class="menu">
+                   <ul id="mnuList" class="menuList">
+                       <li id="designCont">
+                            <span id="design">Design</span>
+        
+                            <ul id="designSubList" class="subList">
+                                <li>
+                                    <span id="exterior">Exterior</span>
+                
+                                    <ul id="exteriorSubList" class="subList">
+                                        <li><a href="/design/exterior/all">All</a></li>
+                                        <li><a href="/design/exterior/residential">Residential</a></li>
+                                        <li><a href="/design/exterior/commercial">Commercial</a></li>
+                                        <li><a href="/design/exterior/office">Office</a></li>
+                                        <li><a href="/design/exterior/mixed">Mixed</a></li>
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <span id="interior">Interior</span>
+                
+                                    <ul id="interiorSubList" class="subList">
+                                        <li><a href="/design/interior/all">All</a></li>
+                                        <li><a href="/design/interior/residential">Residential</a></li>
+                                        <li><a href="/design/interior/commercial">Commercial</a></li>
+                                        <li><a href="/design/interior/office">Office</a></li>
+                                        <li><a href="/design/interior/mixed">Mixed</a></li>
+                                    </ul>
+                                </li>
+                            </ul> 
+                       </li>
+                       <li>
+                            <a id="build" href="/build" style="text-decoration: underline;">Build</a>
+                       </li>
+                        <li>
+                            <a href="/about" id="about" style="text-decoration:underline;">About</a>
+                        </li>
+                       <li>
+                            <span id="contact">Contact</span>
+        
+                            <ul id="contactSubList" class="subList">
+                                <li>
+                                    <a  href="tel:+251922451812">
+                                        <img src="/icons/phone-331.svg" style="margin-right: 1em; height: 1.7em; width: 1.7em;" alt="phone">
+                                    </a>
+                                    <a href="mailto:kehaeskepedb@gmail.com">
+                                        <img src="/icons/mail-2569.svg"  class="contactIcons" alt="Email">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.facebook.com/profile.php?id=100084329252772">
+                                        <img src="/icons/facebook-logo-108.svg" class="leftContactIcons" alt="facebook">
+                                    </a>
+                                    <a href="https://instagram.com/kehaeskepe?r=nametag">
+                                        <img src="/icons/black-instagram-transparent-logo-10671.svg" class="contactIcons" alt="Instagram">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.linkedin.com/in/keha-eskepe-a989bb247">
+                                        <img src="/icons/linkedin-112.svg" sclass="leftContactIcons" alt="LinkedIn">
+                                    </a>
+                                    <a href="#">
+                                        <img src="/icons/pinterest-113.svg" class="contactIcons"  alt="Pinterest">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://t.me/Nebiat_S">
+                                        <img src="/icons/telegram-5945.svg" class="leftContactIcons" alt="Telegram">
+                                    </a>
+                                    <a href="#">
+                                        <img src="/icons/whatsapp-4451.svg" alt="Whatsapp">
+                                    </a>
+                                </li>
+                            </ul> 
+                        </li>
+                   </ul>
+               </div>
+            </div>
+
+        </div>
+
+        <img  id="hape" src="/images/photo_2022-08-01_06-50-10.jpg"  alt="KE HA ESKE PE">
+
+        <br>
+
+        <div id="language" class="lang">
+            <div id="english">
+                <a id="en" href="#">EN</a>
+            </div>
+
+            <div id="amharic">
+                <a id="amh" href="#">አማ</a>
+            </div>
+        </div>
+
+    </div>
+
+    <script type="module" src="/js/main.js" ></script>
+ 
+  
+</body>
+</html>

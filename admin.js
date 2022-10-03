@@ -143,28 +143,29 @@ app.post("/project/edit/:id", upload.array('image') ,(req, res) => {
    
     const id = req.params.id;
 
-    Project.findById(id).then((data) => {
-        req.body.path = [];
-        for(let i = req.files.length; i < data.path.length; i++){
-            req.body.path.push(data.path[i]);
-        };
+    req.body.path = [];
 
-        const projectData = req.body;
-        projectData.mainCategory =  projectData.mainCategory.toLowerCase();
-        projectData.subCategory =  (projectData.subCategory)? projectData.subCategory.toLowerCase()  : "";
-        projectData.subSubCategory =  (projectData.subSubCategory)? projectData.subSubCategory.toLowerCase()  : "";
-    
-        // const project = new Project(projectData);
-        Project.findByIdAndUpdate(id,projectData)
-        .then(() =>  {
-            console.log("Updated Successfully!");
-            console.log(projectData);
-            res.redirect("/project/editProject/" + id);
-        })
-        .catch((err) => {
-            console.log(err);
-        });
+    console.log(req.files);
+
+    req.files.forEach((images) => {
+        req.body.path.push(images.originalname);
+    });
+
+    const projectData = req.body;
+    projectData.mainCategory =  projectData.mainCategory.toLowerCase();
+    projectData.subCategory =  (projectData.subCategory)? projectData.subCategory.toLowerCase()  : "";
+    projectData.subSubCategory =  (projectData.subSubCategory)? projectData.subSubCategory.toLowerCase()  : "";
+
+    // const project = new Project(projectData);
+    Project.findByIdAndUpdate(id,projectData)
+    .then(() =>  {
+        console.log("Updated Successfully!");
+        console.log(req.body);
+        res.json("/project/editProject/" + id);
     })
+    .catch((err) => {
+        console.log(err);
+    });
 }
 );
 

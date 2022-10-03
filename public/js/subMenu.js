@@ -23,7 +23,7 @@ const reset = (boolArray) => {
 const dropSubMenu = (menuLists, listContainer, droppedIdx, keyFrame = "subListDropDown", height = "9em") => {
     listContainer.style.display = "flex";
 
-    listContainer.style.animation = `${keyFrame} 0.5s 0.1s ease forwards`;
+    listContainer.style.animation = `${keyFrame} 0.8s 0.1s ease forwards`;
 
     dropMenu(menuLists);
 

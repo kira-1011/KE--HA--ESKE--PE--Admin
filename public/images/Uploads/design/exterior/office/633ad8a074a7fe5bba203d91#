@@ -27,29 +27,25 @@
     <title>Edit page</title>
 </head>
 <body>
-    <form action="/project/edit/<%= id%>" method="post" enctype="multipart/form-data" data-id="<%= id%>" id="myForm" autocomplete="off">
+    <form action="/project/edit/633ad8a074a7fe5bba203d91" method="post" enctype="multipart/form-data" data-id="633ad8a074a7fe5bba203d91" id="myForm" autocomplete="off">
 
         <div class="image_container">
             
             <span class="category_link">
-                <% if(project.mainCategory == "build") { %>
+                
                 <a href="/" style="display: inline; text-transform: capitalize"
-                  >Built ups</a
-                >
-                <% } else { %>
-                <a href="/" style="display: inline; text-transform: capitalize"
-                  ><%= project.mainCategory%>
+                  >design
                 </a>
                 >
                 <a
-                  href="/<%=project.mainCategory %>/<%=project.subCategory%>/<%=project.subSubCategory%>"
+                  href="/design/exterior/office"
                   style="display: inline; text-transform: capitalize"
-                  ><%= project.subCategory %> </a
+                  >exterior </a
                 >>
                 <a href="" style="display: inline; text-transform: capitalize"
-                  ><%= project.subSubCategory%></a
+                  >office</a
                 >
-                <% } %>
+                
               </span>
 
             <!--  -->
@@ -59,16 +55,17 @@
             <div class="mainImage">
                 <div class="overlay">
                     <label for="choose_image_main"><img src="/icons/edit_FILL0_wght400_GRAD0_opsz48.svg" alt="edit"></label>
+                    <!-- <input type="file" name="image" form="myForm" id="choose_image_main" value="/images/Uploads/design/exterior/office/bubble_diagram.rvt_2021-Apr-13_12-42-49AM-000_3D_View_2_jpg.jpg"> -->
                     <input type="file" form="myForm" id="choose_image_main">
                 </div>
-                <img alt="project image" class="image images" id="main_image" data-order="0" src="/images/Uploads/<%=project.mainCategory%>/<%=project.subCategory %>/<%=project.subSubCategory%>/<%=project.path[0]%>">
+                <img alt="project image" class="image images" id="main_image" src="/images/Uploads/design/exterior/office/bubble_diagram.rvt_2021-Apr-13_12-42-49AM-000_3D_View_2_jpg.jpg">
             </div>
         
             <button type="submit" id="save_button" class="a">
                 <img src="/icons/save_FILL0_wght400_GRAD0_opsz48.svg" alt="">
             </button>
             
-            <button id="delete_button" type="button" data-id="<%= id%>">
+            <button id="delete_button" data-id="633ad8a074a7fe5bba203d91">
                 <img src="/icons/delete_FILL0_wght400_GRAD0_opsz48.svg" alt="">
             </button>
         </div>
@@ -79,24 +76,24 @@
             <!--  -->
             <ul class="description_list">
                 <li id="title"><h1><u>Project description</u></h1></li>
-                <li><label for="projectname">Project name: </label><input type="text" id="projectname" name="name" value = <%= project.name %> ></li>
-                <li><label for="projectarea">Project area: </label><input type="text" id="projectarea" name="area" value = <%= project.area %> ></li>
-                <li><label for="projectlocation">Project location: </label><input type="text" id="projectlocation" name="location" value = <%= project.location %> ></li>
-                <li><label for="projectcost">Project cost: </label><input type="text" id="projectcost" name="cost" value = <%= project.cost %> ></li>
+                <li><label for="projectname">Project name: </label><input type="text" id="projectname" name="name" value = A ></li>
+                <li><label for="projectarea">Project area: </label><input type="text" id="projectarea" name="area" value = f ></li>
+                <li><label for="projectlocation">Project location: </label><input type="text" id="projectlocation" name="location" value = NEW ></li>
+                <li><label for="projectcost">Project cost: </label><input type="text" id="projectcost" name="cost" value = d ></li>
                 <li>
                     <label for="projectcategory">Project category: </label>
 
-                    <select id="projectcategory" data-main="<%= project.mainCategory %>" name="mainCategory">  
+                    <select id="projectcategory" data-main="design" name="mainCategory">  
                         <option value="design">Design</option> 
                          <option value="build">Build</option>  
                     </select> >  
                     
-                    <select id="sub_category" data-sub="<%= project.subCategory %>" name="subCategory"> 
+                    <select id="sub_category" data-sub="exterior" name="subCategory"> 
                         <option value="exterior">Exterior</option> 
                          <option value="interior">Interior</option>  
                     </select> > 
 
-                    <select id="sub_sub_category" data-subsub="<%=project.subSubCategory%>" name="subSubCategory"> 
+                    <select id="sub_sub_category" data-subsub="office" name="subSubCategory"> 
                         <option value="residential">Residential</option> 
                          <option value="commercial">Commercial</option> 
                          <option value="office">Office</option>
@@ -111,12 +108,13 @@
                         <label for="choose_image_sub_1">
                             <img src="/icons/edit_FILL0_wght400_GRAD0_opsz48.svg" alt="edit">
                         </label>
+                        <!-- <input type="file" name="image" form="myForm" class="choose_image_sub" id="choose_image_sub_1"> -->
                         <input type="file" form="myForm" class="choose_image_sub" id="choose_image_sub_1">
-                        <button  class="delete_sub_image" type="button">
-                            <img src="/icons/delete_forever_FILL0_wght400_GRAD0_opsz48.svg" id="deleteBtn1" alt="delete">
+                        <button  class="delete_sub_image" data-id="633ad8a074a7fe5bba203d91">
+                            <img src="/icons/delete_forever_FILL0_wght400_GRAD0_opsz48.svg" alt="delete">
                         </button>
                     </div>
-                    <img id="altImage1" alt="project images" data-order="1" class="images" src="<%= (project.path.length > 1)? '/images/Uploads/' + project.mainCategory + '/' + project.subCategory + '/' + project.subSubCategory + '/' + project.path[1] : '#' %>">
+                    <img id="altImage1" alt="project images" class="images" src="/images/Uploads/design/exterior/office/bubble_diagram.rvt_2021-Apr-13_12-39-23AM-000_3D_View_1_jpg.jpg">
                 </div>
 
                 <div class="image_box">
@@ -124,12 +122,13 @@
                         <label for="choose_image_sub_2">
                             <img src="/icons/edit_FILL0_wght400_GRAD0_opsz48.svg" alt="edit">
                         </label>
+                        <!-- <input type="file" form="myForm" name="image" class="choose_image_sub" id="choose_image_sub_2"> -->
                         <input type="file" form="myForm" class="choose_image_sub" id="choose_image_sub_2">
-                        <button class="delete_sub_image" type="button">
-                            <img src="/icons/delete_forever_FILL0_wght400_GRAD0_opsz48.svg" id="deleteBtn2" alt="delete">
+                        <button class="delete_sub_image">
+                            <img src="/icons/delete_forever_FILL0_wght400_GRAD0_opsz48.svg" alt="delete">
                         </button>
                     </div>
-                    <img id="altImage2" alt="project images" class="images" data-order="2" src="<%= (project.path.length > 2)? '/images/Uploads/' + project.mainCategory + '/' + project.subCategory + '/' + project.subSubCategory + '/' + project.path[2] : '#' %>">
+                    <img id="altImage2" alt="project images" class="images" src="#">
                 </div>
 
                 <div class="image_box">
@@ -137,12 +136,13 @@
                         <label for="choose_image_sub_3">
                             <img src="/icons/edit_FILL0_wght400_GRAD0_opsz48.svg" alt="edit">
                         </label>
+                        <!-- <input type="file" name="image" form="myForm" class="choose_image_sub" id="choose_image_sub_3"> -->
                         <input type="file" form="myForm" class="choose_image_sub" id="choose_image_sub_3">
-                        <button class="delete_sub_image" type="button">
-                            <img src="/icons/delete_forever_FILL0_wght400_GRAD0_opsz48.svg" id="deleteBtn3" alt="delete">
+                        <button class="delete_sub_image">
+                            <img src="/icons/delete_forever_FILL0_wght400_GRAD0_opsz48.svg" alt="delete">
                         </button>
                     </div>
-                    <img id="altImage3" alt="project images" class="images" data-order="3" src="<%= (project.path.length > 3)? '/images/Uploads/' + project.mainCategory + '/' + project.subCategory + '/' + project.subSubCategory + '/' + project.path[3] : '#' %>">
+                    <img id="altImage3" alt="project images" class="images" src="#">
                 </div>
                 
                 <div class="image_box">
@@ -150,12 +150,13 @@
                         <label for="choose_image_sub_4">
                             <img src="/icons/edit_FILL0_wght400_GRAD0_opsz48.svg" alt="edit">
                         </label>
+                        <!-- <input type="file" name="image" form="myForm" class="choose_image_sub" id="choose_image_sub_4"> -->
                         <input type="file" form="myForm" class="choose_image_sub" id="choose_image_sub_4">
-                        <button  class="delete_sub_image" type="button">
-                            <img src="/icons/delete_forever_FILL0_wght400_GRAD0_opsz48.svg" id="deleteBtn4" alt="delete">
+                        <button  class="delete_sub_image">
+                            <img src="/icons/delete_forever_FILL0_wght400_GRAD0_opsz48.svg" alt="delete">
                         </button>
                     </div>
-                    <img id="altImage4" alt="project images" class="images" data-order="4" src="<%= (project.path.length > 4)? '/images/Uploads/' + project.mainCategory + '/' + project.subCategory + '/' + project.subSubCategory + '/' + project.path[4] : '#' %>">
+                    <img id="altImage4" alt="project images" class="images" src="#">
                 </div>
             </div>
         </div>

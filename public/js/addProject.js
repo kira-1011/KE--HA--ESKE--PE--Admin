@@ -11,8 +11,6 @@ const loadImage = (inputFile, container) => {
     if(file){
         const reader = new FileReader();
 
-        console.log(file.size);
-
         reader.readAsDataURL(file);
 
         reader.addEventListener("load", function() {
@@ -36,11 +34,7 @@ const loadImage = (inputFile, container) => {
                         // which means you have to access the `result` in the `success` hook function.
                         success(result) {
                             // The third parameter is required for server
-                            console.log(`name: ${result.name}`)
-            
                             imageFiles.push(result);
-
-                            console.log(result.size);
                         },
                         error(err) {
                           console.log(err.message);
@@ -135,13 +129,6 @@ document.forms.myForm.addEventListener("submit", (e) => {
   });
 });
 
-// document.getElementById("save").addEventListener("click", () => {
-//     fetch("/project/add", { 
-//     method: 'POST',
-//     body: formData
-//   });
-
-// });
 
 window.addEventListener("unload", () => {
     mainCategory.value = "Design";
