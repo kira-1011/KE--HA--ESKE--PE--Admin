@@ -148,6 +148,7 @@ del.addEventListener("click", () => {
     });
 });
 
+<<<<<<< HEAD
 //Add functionality to the delete buttons on the alternate images
 document.getElementsByClassName("more_images")[0].addEventListener("click", (event) => {
   
@@ -179,3 +180,21 @@ document.addEventListener("change", (event) => {
 document.forms.myForm.addEventListener("submit", (e) => {
     submitHandler(e);
 });
+
+
+//make the link's "back to previous page" href = previous page
+let b_homepage = document.querySelectorAll(".b_homepage_link");
+let back_arrow = document.querySelectorAll(".arrow_back");
+
+document.querySelectorAll('.b_homepage_link').forEach(item => {
+    item.addEventListener('click', event => {
+        item.setAttribute('href', document.referrer);
+    })
+  })
+
+  document.querySelectorAll('.arrow_back').forEach(item => {
+    item.addEventListener('click', event => {
+        item.setAttribute('href', document.referrer);
+    })
+  })
+

@@ -30,7 +30,7 @@ body
     width: 100%;
     height: 7%;
     background-color: transparent;
-    /* z-index: 1; */
+    z-index: 1;
 }
 
 #b_homepage
@@ -68,6 +68,7 @@ body
     flex-direction: column;
     justify-content: center;
     margin: 0em 20%;
+    /* background-color: red; */
 }
 
 #ke
@@ -99,12 +100,19 @@ p, .location_name, .mail_name, .phone_number
     margin-top: 1em;
 }
 
-.Adress a, .location a 
+.Adress a, .location a, .Address a:link, .Adress a:visited
 {
-    color: blue;
+    /* color: blue; */
+    color: white;
 }
 
-.location_icon {
+.Address span, .location span
+{
+    color: white;
+}
+
+.location_icon, .mail_icon, .phone_icon {
+    color: white;
     scale: 1.3;
   font-variation-settings:
   'FILL' 0,
@@ -123,6 +131,33 @@ p, .location_name, .mail_name, .phone_number
     }
 }
 
+/**************************************/
+@media screen and (max-width: 1630px) and (min-width: 1287px)
+{
+    .aboutus_container
+    {
+        margin: 0em 5%;
+        /* background-color: red; */
+    }
+}
+
+@media screen and (max-width: 1286px) and (min-width: 1025px)
+{
+    .aboutus_container
+    {
+        font-size: x-large;
+        margin: 0em 5%;
+        /* background-color: red; */
+    }
+
+    .location_icon, .mail_icon, .phone_icon {
+        scale: 1;
+        position: relative;
+        top: 0.2em;
+        left: 0.3em;
+    }
+}
+/**************************************/
 
 @media screen and (max-width: 1024px) {
     #b_homepage a
@@ -132,32 +167,50 @@ p, .location_name, .mail_name, .phone_number
     .aboutus_container
     {
         font-size: x-large;
+        margin: 0em 5%;
     }
 
-    .location_icon {
+    .location_icon, .mail_icon, .phone_icon {
         scale: 1;
+        position: relative;
+        top: 0.2em;
+        left: 0.3em;
     }
 }
 
 
-@media screen and (max-width: 411px) {
+@media screen and (max-width: 600px) {
     #b_homepage a
     {
         font-size: x-small;
     }
-    .aboutus_container
+
+    .back_icon
     {
-        font-size: x-small;
+        top: 0.35em;
     }
 
-    .location_icon {
+    .aboutus_container
+    {
+        font-size: small;
+    }    
+
+    .location_icon, .mail_icon, .phone_icon {
         /* background-color: red; */
         position: relative;
         top: 0.3em;
-        left: 0.3em;
         scale: 0.6;
     }
 }
+
+/*  */
+/* .aboutus_container
+{
+    font-size: small;
+    margin: 0em 5%;
+    background-color: red;
+} */
+/*  */
 /*  */
 /* body::before
 {

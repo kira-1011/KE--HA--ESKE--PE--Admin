@@ -92,6 +92,28 @@ a
     margin-top: 7em;
 }
 
+/* when all category is pressed, the content should be divided by a line */
+
+.separator {
+    margin: 0 5em 0 5em;
+    width: 100%;
+    color: white;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-size: 1.5em;
+  }
+  
+  .separator::before,
+  .separator::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid white;
+  }
+  
+
+/*  */
+
 #image_container .wrapper
 {
     cursor: pointer;

@@ -200,8 +200,10 @@ app.get("/:mainCategory/:subCategory/:subSubCategory", (req, res) => {
     Project.find(data).sort({createdAt: -1})
     .then((projects) => {
 
+        const url = req.url;
+
         if(projects.length > 0)
-            res.render("detailpage", {projects, data});
+            res.render("detailpage", {projects, data, url});
            
         else
             res.redirect("/project/addProject");
