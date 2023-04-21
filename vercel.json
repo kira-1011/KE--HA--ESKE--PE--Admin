@@ -2,9 +2,9 @@
   "version": 2,
   "name": "kehaeskepe",
   "builds": [
-    { "src": "app.js", "use": "@vercel/node" }
+    { "src": "admin.js", "use": "@vercel/node" }
   ],
   "routes": [
-    { "src": "/(.*)", "dest": "/app.js" }
+    { "src": "/(.*)", "dest": "/admin.js" }
   ]
 }
