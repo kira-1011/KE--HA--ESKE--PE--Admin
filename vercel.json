@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "name": "kehaeskepe",
+  "name": "kehaeskepe_admin",
   "builds": [
     { "src": "admin.js", "use": "@vercel/node" }
   ],
