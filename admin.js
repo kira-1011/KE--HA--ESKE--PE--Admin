@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const Project = require("./models/Project");
 const bodyParser = require("body-parser");
 const multer = require("multer");
+const path = require("path");
 
 //Configuring multer
 const storage = multer.diskStorage({
